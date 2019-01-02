@@ -1,0 +1,49 @@
+.transfer-container {
+    width: 100%;
+    background-color: #b8937b;
+    color: white;
+    height: 80px;
+}
+
+.transfer-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.transfer-container li {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+}
+
+.transfer-container a {
+    text-decoration: none;
+    color: none;
+    line-height: 80px;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    position: relative;
+}
+
+.transfer-container a:hover,
+.transfer-container a:active,
+.transfer-container a.active {
+    background-color: #724935;
+}
+
+
+.transfer-container a.active:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 10px);
+    border: 15px solid transparent;
+    border-top: 20px solid #724935;
+}
+
+
+
+
