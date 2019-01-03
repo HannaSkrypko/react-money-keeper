@@ -1,0 +1,29 @@
+.transfers-summary-container {
+    border-bottom: thin solid #ccc;
+    box-shadow: 0 2px 3px #ccc;
+    height: 60px;
+}
+
+.transfers-summary-container div{
+    display: inline-block;
+    width: 25%;
+    line-height: 60px;
+    text-align: center;
+}
+
+.transfers-summary-container .period {
+    width: 50%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.transfers-summary-container span {
+    display: inline-block;
+    background-color: #b8937b;
+    color: white;
+    border-radius: 5px;
+    line-height: initial;
+    padding: 2px 0;
+    width: 100px;
+    text-align: center;
+}

@@ -1,21 +1,35 @@
-import React from "react"
+import React, { Component } from "react"
 
 import PeriodSlider from "../../components/PeriodSlider/PeriodSlider";
 import TransfersNav from "../../components/TransfersNav/TransfersNav";
 import TransfersList from "../../components/TransfersList/TransfersList";
 import TransfersSummaryList from "../../components/TransfersSummaryList/TransfersSummaryList";
 
+class Transfers extends Component {
+    constructor(props) {
+        super();
+        this.state = {
+            isDaily: true,
+            isWeekly: false,
+            isMontly: false
+        }
+    }
 
-const transfers = ( props ) => {
-    return (
-        <div>
-            <PeriodSlider />
+    render() {
+        return (
+            <div>
+                <PeriodSlider />
+    
+                <TransfersNav />
 
-            <TransfersNav />
-
-            <TransfersList />
-        </div>
-    )
+                { this.state.isDaily ? <TransfersList /> : null}
+                { this.state.isWeekly ? <TransfersSummaryList /> : null } 
+                { this.state.isMontly ? <TransfersSummaryList /> : null } 
+                
+            </div>
+        )
+    }
 }
 
-export default transfers;
+
+export default Transfers;

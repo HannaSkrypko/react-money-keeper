@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let path = require('path');
 
 let conf = {
+    
     /* modules */
     module: {
         

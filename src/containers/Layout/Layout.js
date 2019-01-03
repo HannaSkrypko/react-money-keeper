@@ -3,7 +3,8 @@ import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
 import './Layout.css';
 
-import Transfers from "../Transfers/Transfers"
+import Transfers from "../Transfers/Transfers";
+import Accounts from "../Accounts/Accounts";
 
 class Layout extends Component {
     render () {
@@ -31,6 +32,8 @@ class Layout extends Component {
                 <main>
 
                     <Route path="/" exact component={Transfers} />
+
+                    <Route path="/accounts" component={Accounts} />
 
                 </main>
 

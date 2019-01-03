@@ -5,10 +5,10 @@ import "./TransfersSummary.css";
 class TransfersSummary extends Component {
     render() {
         return (
-            <div className="transfersSummary-container">
-                
-                <div> Period </div>
-                
+            <div className="transfers-summary-container">
+                <div className="period"> <span> period </span> </div>
+                <div> Count+ </div>
+                <div> Count- </div>
             </div>
         )
     }
