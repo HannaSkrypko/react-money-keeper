@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import Transfers from "./containers/Transfers/Transfers"
+import Layout from "./containers/Layout/Layout"
 
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Transfers />
+          <Layout />
         </div>
       </BrowserRouter>
     );

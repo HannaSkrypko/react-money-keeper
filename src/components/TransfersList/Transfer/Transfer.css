@@ -1,0 +1,9 @@
+.transfer-container div{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 25%;
+    text-align: center;
+    border-bottom: thin solid #ccc;
+    box-shadow: 0 2px 3px #ccc;
+}

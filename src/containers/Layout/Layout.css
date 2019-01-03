@@ -1,23 +1,23 @@
-.transfers-container header{
+.layout-container header{
     width: 100%;
     background-color: #b8937b;
     color: white;
     height: 80px;
 }
 
-.transfers-container ul {
+.layout-container ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.transfers-container li {
+.layout-container li {
     display: inline-block;
     width: 25%;
     text-align: center;
 }
 
-.transfers-container a {
+.layout-container a {
     text-decoration: none;
     color: none;
     line-height: 80px;
@@ -28,14 +28,14 @@
     position: relative;
 }
 
-.transfers-container a:hover,
-.transfers-container a:active,
-.transfers-container a.active {
+.layout-container a:hover,
+.layout-container a:active,
+.layout-container a.active {
     background-color: #724935;
 }
 
 
-.transfers-container a.active:after {
+.layout-container a.active:after {
     content: "";
     position: absolute;
     top: 100%;

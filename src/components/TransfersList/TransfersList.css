@@ -1,0 +1,18 @@
+.transfersList-container {
+    border-bottom: thin solid #ccc;
+    box-shadow: 0 2px 3px #ccc;
+    height: 60px;
+}
+
+.transfersList-container .transfers-caption div{
+    display: inline-block;
+    width: 25%;
+    line-height: 60px;
+    text-align: center;
+}
+
+.transfersList-container .transfers-caption div.transfers-caption__day {
+    width: 50%;
+    text-align: left;
+    padding-left: 10px;
+}

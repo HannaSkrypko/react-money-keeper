@@ -1,0 +1,31 @@
+.transfersNav-container {
+    height: 60px;
+    line-height: 60px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.transfersNav-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.transfersNav-container li {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+}
+
+.transfersNav-container input {
+    visibility: hidden;
+}
+
+.transfersNav-container label {
+    cursor: pointer;
+}
+
+.transfersNav-container input:checked + label {
+    font-weight: bold;
+    color: #724935;
+}

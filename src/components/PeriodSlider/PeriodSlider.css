@@ -1,0 +1,29 @@
+.periodSlider-container {
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2em;
+}
+
+.periodSlider-container div {
+    display: inline-block;
+    text-align: center;
+    width: 90%;
+}
+
+.periodSlider-container button {
+    background-color: transparent;
+    border-color: transparent;
+    width: 5%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.periodSlider-container button:before {
+    content: "";
+    position: absolute;
+    
+}
+
+
+
