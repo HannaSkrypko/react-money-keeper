@@ -8,15 +8,15 @@ const transfersNav = ( props ) => {
             <ul>
                 <li>
                     <input type='radio' value='daily' name='radio' id='daily' defaultChecked />
-                    <label htmlFor='daily'> Daily </label>
+                    <label htmlFor='daily' onClick={() => props.setPeriod(1)}> Daily </label>
                 </li>
                 <li>
                     <input type='radio' value='weekly' name='radio' id='weekly'/>
-                    <label htmlFor='weekly'> Weekly </label>
+                    <label htmlFor='weekly' onClick={() => props.setPeriod(2)}> Weekly </label>
                 </li>
                 <li>
                     <input type='radio' value='monthly' name='radio' id='monthly'/>
-                    <label htmlFor='monthly'> Monthly </label>
+                    <label htmlFor='monthly' onClick={() => props.setPeriod(3)}> Monthly </label>
                 </li>
             </ul>
         </nav>

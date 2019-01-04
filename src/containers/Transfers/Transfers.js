@@ -9,22 +9,26 @@ class Transfers extends Component {
     constructor(props) {
         super();
         this.state = {
-            isDaily: true,
-            isWeekly: false,
-            isMontly: false
+            period: 1,
         }
+    }
+
+    setPeriod = (period) => {
+        this.setState({
+            period: period,
+        })
     }
 
     render() {
         return (
             <div>
-                <PeriodSlider />
+                <PeriodSlider  />
     
-                <TransfersNav />
+                <TransfersNav  setPeriod = {this.setPeriod} />
 
-                { this.state.isDaily ? <TransfersList /> : null}
-                { this.state.isWeekly ? <TransfersSummaryList /> : null } 
-                { this.state.isMontly ? <TransfersSummaryList /> : null } 
+                { this.state.period === 1 && <TransfersList />}
+                { this.state.period === 2 && <TransfersSummaryList />} 
+                { this.state.period === 3 && <TransfersSummaryList />} 
                 
             </div>
         )
