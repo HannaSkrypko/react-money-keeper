@@ -1,0 +1,13 @@
+.accountsGroup-header {
+    background-color: #ccc;
+    padding: 15px 10px 5px;
+}
+
+.accountsGroup-header span {
+    display: inline-block;
+    width: 50%;
+}
+
+.accountsGroup-header span.total {
+    text-align: right;
+}

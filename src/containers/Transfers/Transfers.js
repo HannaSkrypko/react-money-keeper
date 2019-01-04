@@ -9,7 +9,7 @@ class Transfers extends Component {
     constructor(props) {
         super();
         this.state = {
-            period: 1,
+            period: 1,  // 1 - daily, 2- weekly, 3 - monthly
         }
     }
 

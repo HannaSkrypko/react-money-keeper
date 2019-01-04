@@ -1,0 +1,23 @@
+.accounts-container {
+    margin-top: 40px;
+}
+
+.accounts-container .crud-buttons{
+    width: 310px;
+    margin: 0 auto;
+}
+
+.accounts-container .crud-button{
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    width: 60%;
+    cursor: pointer;
+}
+
+.accounts-container .crud-button:first-child{
+    width: 40%;
+}
+.accounts-container .crud-button:hover {
+    font-weight: bold;
+}

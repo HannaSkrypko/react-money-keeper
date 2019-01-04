@@ -1,0 +1,13 @@
+.account-container {
+    padding: 10px 10px;
+    border-bottom: thin solid #ccc;
+}
+
+.account-container  span {
+    display: inline-block;
+    width: 50%;
+}
+
+.account-container  span.total {
+    text-align: right;
+}

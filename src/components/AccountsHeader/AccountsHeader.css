@@ -1,0 +1,12 @@
+.accountsHeader-container {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-bottom: thin solid #b8937b;
+    border-top: thin solid #b8937b;
+}
+
+.accountsHeader-container div {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+}

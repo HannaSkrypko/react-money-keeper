@@ -14,10 +14,10 @@ class Layout extends Component {
                     <nav>
                         <ul>
                             <li>
-                                <NavLink to="/" exact> Transfers </NavLink>
+                                <NavLink to="/Transfers" > Transfers </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/accounts"> Accounts </NavLink>
+                                <NavLink to="/" exact> Accounts </NavLink>  {/*to="/accounts"> */}
                             </li>
                             <li>
                                 <NavLink to="/budjetplanning"> Budjet Planning </NavLink>
@@ -31,9 +31,10 @@ class Layout extends Component {
 
                 <main>
 
-                    <Route path="/" exact component={Transfers} />
+                    <Route path="/" exact component={Accounts} />
+                    {/*<Route path="/" exact component={Transfers} />
 
-                    <Route path="/accounts" component={Accounts} />
+                    <Route path="/accounts" component={Accounts} />*/}
 
                 </main>
 

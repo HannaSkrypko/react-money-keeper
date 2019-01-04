@@ -26,6 +26,7 @@
     width: 100%;
     font-size: 20px;
     position: relative;
+    transition: background-color ease .3s;
 }
 
 .layout-container a:hover,
@@ -35,7 +36,7 @@
 }
 
 
-.layout-container a.active:after {
+/*.layout-container a.active:after {
     content: "";
     position: absolute;
     top: 100%;
@@ -43,7 +44,7 @@
     border: 15px solid transparent;
     border-top: 20px solid #724935;
 }
-
+*/
 
 
 
