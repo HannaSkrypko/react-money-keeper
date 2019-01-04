@@ -4,10 +4,11 @@ import "./Modal.css";
 
 const modal = ( props ) => {
     return (
-        <div className="modal-overlay">
+        <div>
+            <div className="modal-overlay" onClick={props.closed}> </div>
             <div className="modal">
                 {props.children}
-                <button type="submit"> X </button>
+                <button className="modal-close-button" type="submit" onClick={props.closed}> X </button>
             </div>
         </div>
     )

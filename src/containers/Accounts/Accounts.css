@@ -21,3 +21,7 @@
 .accounts-container .crud-button:hover {
     font-weight: bold;
 }
+
+.accounts-container button:focus {
+    outline: none;
+}

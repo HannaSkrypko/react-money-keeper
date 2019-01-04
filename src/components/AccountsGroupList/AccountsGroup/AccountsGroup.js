@@ -12,9 +12,9 @@ const accountsGroup = ( props ) => {
                 <span className="total"> count </span>
             </div>
 
-            <Account />
-            <Account />
-            <Account />
+            <Account editMode={props.editMode}/>
+            <Account editMode={props.editMode}/>
+            <Account editMode={props.editMode}/>
             
         </div>
     )

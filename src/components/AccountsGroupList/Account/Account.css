@@ -11,3 +11,10 @@
 .account-container  span.total {
     text-align: right;
 }
+
+.account-container .delete-account-button {
+    background-color: #dc143c;
+    border: none;
+    border-radius: 50%;
+    color: white;
+}

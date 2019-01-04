@@ -7,9 +7,9 @@ const accountsGroupList = ( props ) => {
     return (
         <div>
             
-            <AccountsGroup />
-            <AccountsGroup />
-            <AccountsGroup />
+            <AccountsGroup editMode={props.editMode}/>
+            <AccountsGroup editMode={props.editMode}/>
+            <AccountsGroup editMode={props.editMode}/>
             
         </div>
     )
