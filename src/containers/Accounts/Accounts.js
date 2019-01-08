@@ -5,12 +5,21 @@ import './Accounts.css';
 import AddAccountModal from "../../components/AddAcountModal/AddAccountModal";
 import AccountsHeader from "../../components/AccountsHeader/AccountsHeader";
 import AccountsGroupList from "../../components/AccountsGroupList/AccountsGroupList"
+import axios from '../../../axios-transfers';
 
 class Accounts extends Component {
     state ={
         isShowed: false, //for add new account modal
-        isEditMode: false
+        isEditMode: false,
+        group: [],
     };
+
+    componentDidMount() {
+        axios.get("https://money-keeper-a936a.firebaseio.com/Group.json")
+            .then(response => {
+                this.setState({group: response.data.groupName})
+            })
+    }
 
     showAddAccountModalHandler = () => {
         this.setState( {
@@ -31,6 +40,7 @@ class Accounts extends Component {
     };
 
     render () {
+        console.log(this.state.group);
         let addAccountModal = null;
         
         if (this.state.isShowed) {

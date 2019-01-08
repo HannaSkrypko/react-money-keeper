@@ -1,0 +1,51 @@
+.layout-container {
+    & header{
+        width: 100%;
+        background-color: #b8937b;
+        color: white;
+        height: 80px;
+    }
+
+    & ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    & li {
+        display: inline-block;
+        width: 25%;
+        text-align: center;
+    }
+
+    & a {
+        text-decoration: none;
+        color: none;
+        line-height: 80px;
+        color: white;
+        display: inline-block;
+        width: 100%;
+        font-size: 20px;
+        position: relative;
+        transition: background-color ease .3s;
+
+        &:hover,
+        &:active,
+        &.active {
+            background-color: #724935;
+        }
+    }
+}
+
+/*.layout-container a.active:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 10px);
+    border: 15px solid transparent;
+    border-top: 20px solid #724935;
+}
+*/
+
+
+

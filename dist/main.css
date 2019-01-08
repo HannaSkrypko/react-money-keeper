@@ -14,10 +14,350 @@ body {
     min-width: 320px;
     font-family: "Raleway", sans-serif;
 }
-.transfer-container {
-    width: 100%;
-    background-color: #006633;
-    color: white;
+.layout-container header {
+  width: 100%;
+  background-color: #b8937b;
+  color: white;
+  height: 80px; }
+
+.layout-container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.layout-container li {
+  display: inline-block;
+  width: 25%;
+  text-align: center; }
+
+.layout-container a {
+  text-decoration: none;
+  color: none;
+  line-height: 80px;
+  color: white;
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  position: relative;
+  transition: background-color ease .3s; }
+  .layout-container a:hover, .layout-container a:active, .layout-container a.active {
+    background-color: #724935; }
+
+/*.layout-container a.active:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 10px);
+    border: 15px solid transparent;
+    border-top: 20px solid #724935;
+}
+*/
+
+.periodSlider-container {
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2em;
+}
+
+.periodSlider-container div {
+    display: inline-block;
+    text-align: center;
+    width: 90%;
+}
+
+.periodSlider-container button {
+    background-color: transparent;
+    border-color: transparent;
+    width: 5%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.periodSlider-container button:before {
+    content: "";
+    position: absolute;
+    
 }
 
 
+
+
+.transfersNav-container {
+    height: 60px;
+    line-height: 60px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.transfersNav-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.transfersNav-container li {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+}
+
+.transfersNav-container input {
+    visibility: hidden;
+}
+
+.transfersNav-container label {
+    cursor: pointer;
+}
+
+.transfersNav-container input:checked + label {
+    font-weight: bold;
+    color: #724935;
+}
+.transfersList-container {
+    border-bottom: thin solid #ccc;
+    -webkit-box-shadow: 0 2px 3px #ccc;
+            box-shadow: 0 2px 3px #ccc;
+    height: 60px;
+}
+
+.transfersList-container .transfers-caption div{
+    display: inline-block;
+    width: 25%;
+    line-height: 60px;
+    text-align: center;
+}
+
+.transfersList-container .transfers-caption div.transfers-caption__day {
+    width: 50%;
+    text-align: left;
+    padding-left: 10px;
+}
+.transfer-container div{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 25%;
+    text-align: center;
+    border-bottom: thin solid #ccc;
+    -webkit-box-shadow: 0 2px 3px #ccc;
+            box-shadow: 0 2px 3px #ccc;
+}
+.transfers-summary-container {
+    border-bottom: thin solid #ccc;
+    -webkit-box-shadow: 0 2px 3px #ccc;
+            box-shadow: 0 2px 3px #ccc;
+    height: 60px;
+}
+
+.transfers-summary-container div{
+    display: inline-block;
+    width: 25%;
+    line-height: 60px;
+    text-align: center;
+}
+
+.transfers-summary-container .period {
+    width: 50%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.transfers-summary-container span {
+    display: inline-block;
+    background-color: #b8937b;
+    color: white;
+    border-radius: 5px;
+    line-height: initial;
+    padding: 2px 0;
+    width: 100px;
+    text-align: center;
+}
+.accounts-container {
+    margin-top: 40px;
+}
+
+.accounts-container .crud-buttons{
+    width: 310px;
+    margin: 0 auto;
+}
+
+.accounts-container .crud-button{
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    width: 60%;
+    cursor: pointer;
+}
+
+.accounts-container .crud-button:first-child{
+    width: 40%;
+}
+.accounts-container .crud-button:hover {
+    font-weight: bold;
+}
+
+.accounts-container button:focus {
+    outline: none;
+}
+.addModal-container {
+    width: 70%;
+    margin: 20px auto 0;
+}
+
+.addModal-container div {
+    margin-bottom: 10px;
+}
+
+.addModal-container label {
+    width: 30%;
+    display: inline-block;
+}
+
+.addModal-container input,
+.addModal-container select {
+    width: 70%;
+    padding: 5px 5px;
+    font-size: 19px;
+    border-radius: 12px;
+    border: thin solid #ccc;
+}
+
+.addModal-container input {
+    padding-left: 10px;
+}
+
+.addModal-container input:focus,
+.addModal-container select:focus {
+    outline: none;
+} 
+
+.addModal-container button {
+    margin-top: 20px;
+    padding: 0.3em;
+}
+
+
+
+.modal-overlay {
+    z-index: 298;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+}
+
+.modal {
+    z-index: 299;
+    position: absolute;
+    width: 90%;
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background-color: white;
+    max-width: 500px;
+    padding: 45px 20px 80px;
+}
+
+.modal button {
+    background-color: transparent;
+    border: none;
+}
+
+.modal .modal-close-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background-color: #666;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    width: 22px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.modal .modal-close-button:hover {
+    background-color: #dc143c;
+}
+
+.modal .modal-buttons {
+    width: 170px;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+
+.modal .Danger {
+    font-size: 14px;
+    width: 70px;
+}
+
+.modal .Danger:hover {
+    color: #dc143c;
+    font-weight: bold;
+}
+
+.modal .Success {
+    font-size: 20px;
+    width: 100px;
+}
+
+.modal .Success:hover {
+    border-radius: 20px;
+    color: white;
+    background-color: #39a51c;
+    font-weight: bold;
+}
+
+.accountsHeader-container {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-bottom: thin solid #b8937b;
+    border-top: thin solid #b8937b;
+}
+
+.accountsHeader-container div {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+}
+.accountsGroup-header {
+    background-color: #ccc;
+    padding: 15px 10px 5px;
+}
+
+.accountsGroup-header span {
+    display: inline-block;
+    width: 50%;
+}
+
+.accountsGroup-header span.total {
+    text-align: right;
+}
+.account-container {
+    padding: 10px 10px;
+    border-bottom: thin solid #ccc;
+}
+
+.account-container  span {
+    display: inline-block;
+    width: 50%;
+}
+
+.account-container  span.total {
+    text-align: right;
+}
+
+.account-container .delete-account-button {
+    background-color: #dc143c;
+    border: none;
+    border-radius: 50%;
+    color: white;
+}

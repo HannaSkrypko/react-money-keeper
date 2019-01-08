@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
-import './Layout.css';
+import './Layout.scss';
 
 import Transfers from "../Transfers/Transfers";
 import Accounts from "../Accounts/Accounts";

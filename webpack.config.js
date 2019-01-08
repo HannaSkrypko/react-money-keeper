@@ -32,8 +32,15 @@ let conf = {
                     'css-loader',
                     'postcss-loader'
                 ]
+            },
+           { 
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader"
+                ]
             }
-      
         ]
     },
 
@@ -52,7 +59,8 @@ let conf = {
     
     /* black overlay with error message */
     devServer: {
-        overlay: true
+        overlay: true,
+        historyApiFallback: true
     },
 
     /* sourcemap */
