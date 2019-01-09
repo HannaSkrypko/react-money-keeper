@@ -8,7 +8,7 @@ const accountsGroup = ( props ) => {
     return (
         <div className="accountsGroup-container">
             <div className="accountsGroup-header">
-                <span className="group"> Group </span>
+                <span className="group"> {props.groupName} </span>
                 <span className="total"> count </span>
             </div>
 

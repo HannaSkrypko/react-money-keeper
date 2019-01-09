@@ -1,18 +1,45 @@
-import React  from 'react';
+import React, { Component }  from 'react';
 
 
-import AccountsGroup from "./AccountsGroup/AccountsGroup"
+import AccountsGroup from "./AccountsGroup/AccountsGroup";
+import axios from '../../../axios-transfers';
 
-const accountsGroupList = ( props ) => {
-    return (
-        <div>
-            
-            <AccountsGroup editMode={props.editMode}/>
-            <AccountsGroup editMode={props.editMode}/>
-            <AccountsGroup editMode={props.editMode}/>
-            
-        </div>
-    )
+class AccountsGroupList extends Component {
+    state = {
+        groups: [],
+    }
+
+    componentDidMount() {
+        axios.get("/group.json")
+            .then(
+                response => {
+                    const fetchArray = [];
+                    for (let key in response.data) {
+                        fetchArray.push({
+                            ...response.data[key],
+                            id: key
+                        });
+                    }
+                    this.setState({
+                        groups: fetchArray,
+                    })
+                }
+            );
+    }
+
+    render() {
+        return (
+            <div>
+                 {this.state.groups.map(group => (
+                    <AccountsGroup 
+                        editMode={this.props.editMode}
+                        groupName={group.groupName} />
+                 ))}
+                
+            </div>
+        )
+    }
 }
 
-export default accountsGroupList;
+
+export default AccountsGroupList;
