@@ -3,9 +3,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let path = require('path');
 
 let conf = {
-    
+   
     /* modules */
     module: {
+
         
         /*loaders */
         rules: [
@@ -70,6 +71,7 @@ let conf = {
 
 module.exports = (env, options) => {
     let production = options.mode === 'production';
+
 
     conf.devtool = production
                     ? false

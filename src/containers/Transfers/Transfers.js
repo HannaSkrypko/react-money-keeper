@@ -11,22 +11,15 @@ class Transfers extends Component {
         super();
         this.state = {
             period: 1,  // 1 - daily, 2- weekly, 3 - monthly
-            
-            account: {
-                name: "MTBank",
-                balance: 0,
-                group: "Card",
-            },
-
         }
     }
 
-    // sendPOSTHandler = () => {
-    //     const data = this.state.account;
-    //     axios.post('/account.json', data)
-    //         .then(response => console.log(response))
-    //         .catch(error => console.log(error));
-    // }
+    //   sendPOSTHandler = () => {
+    //       const data = this.state.transfer;
+    //       axios.post('/transfer.json', data)
+    //           .then(response => console.log(response))
+    //           .catch(error => console.log(error));
+    //   }
 
     setPeriod = (period) => {
         this.setState({
@@ -37,6 +30,7 @@ class Transfers extends Component {
     render() {
         return (
             <div>
+                {/* <button onClick={this.sendPOSTHandler}>send</button>  */}
                 <PeriodSlider  />
     
                 <TransfersNav  setPeriod = {this.setPeriod} />

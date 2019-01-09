@@ -5,10 +5,10 @@ import "./Transfer.css";
 const transfer = ( props ) => {
     return (
         <div className="transfer-container">
-            <div> Account </div>
-            <div> Category </div>
-            <div> Count+ </div>
-            <div> Count- </div>
+            <div> {props.accountName} </div>
+            <div> {props.categoryName} </div>
+            <div> BR {props.income} </div>
+            <div> BR {props.expence} </div>
         </div>
     )
 };

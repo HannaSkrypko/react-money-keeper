@@ -1,0 +1,55 @@
+%arrows {
+    content: "";
+    position: absolute;
+    border: thin solid black;
+    border-right: none;
+    border-bottom: none;
+    width: 15px;
+    height: 15px;
+}
+
+.periodSlider-container {
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2em;
+    
+    & div {
+    display: inline-block;
+    text-align: center;
+    width: calc(100% - 50px);
+    }
+
+    & button {
+    background-color: transparent;
+    border-color: transparent;
+    width: 15px;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    
+    &:focus {
+        outline: none;
+    }
+
+    &:before {
+        @extend %arrows;
+    }
+
+    &:hover::before {
+        border-width: 2px;
+    }
+
+    &.left-arrow:before{
+        transform: rotate(-45deg);
+    }
+
+    &.right-arrow:before{
+        transform: rotate(138deg);
+    }
+
+    }
+}
+
+
+
+
