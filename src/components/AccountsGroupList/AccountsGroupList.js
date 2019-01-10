@@ -5,36 +5,32 @@ import AccountsGroup from "./AccountsGroup/AccountsGroup";
 import axios from '../../../axios-transfers';
 
 class AccountsGroupList extends Component {
-    state = {
-        groups: [],
-    }
+    // state = {
+    //     groups: this.props.groups,
+    // }
 
-    componentDidMount() {
-        axios.get("/group.json")
-            .then(
-                response => {
-                    const fetchArray = [];
-                    for (let key in response.data) {
-                        fetchArray.push({
-                            ...response.data[key],
-                            id: key
-                        });
-                    }
-                    this.setState({
-                        groups: fetchArray,
-                    })
-                }
-            );
+    sortByGroupName = (groupName) => {
+        const accounts = this.props.accounts;
+        let accountsInGroup = accounts.map(acc => { return (acc.group == groupName) ? acc : null} );
+        return accountsInGroup
     }
+    
 
     render() {
+        const groups = this.props.groups;
+        
         return (
             <div>
-                 {this.state.groups.map(group => (
-                    <AccountsGroup 
-                        editMode={this.props.editMode}
-                        groupName={group.groupName} />
-                 ))}
+                 {groups.map(group => {
+                     let accounts = this.sortByGroupName(group.groupName);
+                     return(
+                        <AccountsGroup 
+                            key={group.id}
+                            editMode={this.props.editMode}
+                            groupName={group.groupName} 
+                            accounts={accounts}/>
+                     )
+                 } )}
                 
             </div>
         )

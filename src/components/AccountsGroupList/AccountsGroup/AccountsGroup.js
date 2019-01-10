@@ -5,6 +5,8 @@ import './AccountsGroup.css';
 import Account from "../Account/Account"
 
 const accountsGroup = ( props ) => {
+    
+    console.log(props.accounts);
     return (
         <div className="accountsGroup-container">
             <div className="accountsGroup-header">
@@ -12,9 +14,17 @@ const accountsGroup = ( props ) => {
                 <span className="total"> count </span>
             </div>
 
-            <Account editMode={props.editMode}/>
-            <Account editMode={props.editMode}/>
-            <Account editMode={props.editMode}/>
+            {props.accounts.map(account => {
+                if (account){
+                    return(
+                        <Account 
+                        name={account.name}
+                        balance={account.balance}
+                        editMode={props.editMode}/>
+                    )
+                }
+                
+            })}
             
         </div>
     )

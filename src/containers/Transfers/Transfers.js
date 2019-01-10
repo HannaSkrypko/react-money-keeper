@@ -4,14 +4,33 @@ import PeriodSlider from "../../components/PeriodSlider/PeriodSlider";
 import TransfersNav from "../../components/TransfersNav/TransfersNav";
 import TransfersList from "../../components/TransfersList/TransfersList";
 import TransfersSummaryList from "../../components/TransfersSummaryList/TransfersSummaryList";
+import AddTransferButton from "../../components/AddTransferButton/AddTransferButton";
+import AddTransferModal from "../../components/AddTransferModal/AddTransferModal";
 import axios from '../../../axios-transfers';
 
 class Transfers extends Component {
-    constructor(props) {
-        super();
-        this.state = {
-            period: 1,  // 1 - daily, 2- weekly, 3 - monthly
-        }
+    state = {
+        period: 1,  // 1 - daily, 2 - monthly
+        isShowed: false, // for add transfer modal 
+        term: 2, // 1 - income, 2 - expense
+    }
+
+    showAddTransferModalHandler = () => {
+        this.setState( {
+            isShowed: true,
+        } )
+    };
+
+    closeAddTransferModalHandler = () => {
+        this.setState( {
+            isShowed: false,
+        } )
+    };
+
+    setTransferTerm = (term) => {
+        this.setState({
+            term: term,
+        })
     }
 
     //   sendPOSTHandler = () => {
@@ -28,6 +47,12 @@ class Transfers extends Component {
     }
 
     render() {
+        let addTransferModal = null;
+        
+        if (this.state.isShowed) {
+            addTransferModal = <AddTransferModal closed={this.closeAddTransferModalHandler} setTerm={this.setTransferTerm} term={this.state.term}/>
+        } 
+
         return (
             <div>
                 {/* <button onClick={this.sendPOSTHandler}>send</button>  */}
@@ -37,7 +62,9 @@ class Transfers extends Component {
 
                 { this.state.period === 1 && <TransfersList />}
                 { this.state.period === 2 && <TransfersSummaryList />} 
-                { this.state.period === 3 && <TransfersSummaryList />} 
+
+                <AddTransferButton clicked={this.showAddTransferModalHandler}/> 
+                {addTransferModal}
             </div>
         )
     }

@@ -1,0 +1,21 @@
+.AddTransferButton {
+    background-color: #39a51c;
+    width: 70px;
+    height: 70px;
+    color: white;
+    font-size: 3em;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    
+    &:hover {
+        font-weight: bold;
+    }
+
+    &:focus {
+        outline: none;
+    } 
+}

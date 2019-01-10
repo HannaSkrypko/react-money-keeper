@@ -11,15 +11,44 @@ class Accounts extends Component {
     state ={
         isShowed: false, //for add new account modal
         isEditMode: false,
-        group: [],
+        groups: [],
+        accounts: [],
     };
 
     componentDidMount() {
-        axios.get("https://money-keeper-a936a.firebaseio.com/Group.json")
-            .then(response => {
-                this.setState({group: response.data.groupName})
-            })
+        axios.get("/group.json")
+            .then(
+                response => {
+                    const fetchArray = [];
+                    for (let key in response.data) {
+                        fetchArray.push({
+                            ...response.data[key],
+                            id: key
+                        });
+                    }
+                    this.setState({
+                        groups: fetchArray,
+                    })
+                }
+            );
+        axios.get("/account.json")
+            .then(
+                response => {
+                    const fetchArray = [];
+                    for (let key in response.data) {
+                        fetchArray.push({
+                            ...response.data[key],
+                            id: key
+                        });
+                    }
+                    this.setState({
+                        accounts: fetchArray,
+                    })
+                }
+            );
     }
+
+
 
     showAddAccountModalHandler = () => {
         this.setState( {
@@ -40,7 +69,6 @@ class Accounts extends Component {
     };
 
     render () {
-        console.log(this.state.group);
         let addAccountModal = null;
         
         if (this.state.isShowed) {
@@ -58,7 +86,10 @@ class Accounts extends Component {
 
                 <AccountsHeader />
 
-                <AccountsGroupList editMode={this.state.isEditMode}/>
+                <AccountsGroupList 
+                groups={this.state.groups}
+                accounts={this.state.accounts}
+                editMode={this.state.isEditMode} />
 
                 {/*<Modal />*/}
             </div>
