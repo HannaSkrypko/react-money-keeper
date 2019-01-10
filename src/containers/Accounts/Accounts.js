@@ -72,7 +72,7 @@ class Accounts extends Component {
         let addAccountModal = null;
         
         if (this.state.isShowed) {
-            addAccountModal = <AddAccountModal closed={this.closeAddAccountModalHandler}/>
+            addAccountModal = <AddAccountModal groups={this.state.groups} closed={this.closeAddAccountModalHandler}/>
         }        
 
         return (
@@ -87,9 +87,9 @@ class Accounts extends Component {
                 <AccountsHeader />
 
                 <AccountsGroupList 
-                groups={this.state.groups}
-                accounts={this.state.accounts}
-                editMode={this.state.isEditMode} />
+                    groups={this.state.groups}
+                    accounts={this.state.accounts}
+                    editMode={this.state.isEditMode} />
 
                 {/*<Modal />*/}
             </div>

@@ -1,0 +1,66 @@
+.addTransferModal-container {
+    width: 70%;
+    margin: 20px auto 0;
+
+    & .term {
+        ul {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        li {
+            width: 50%;
+            text-align: center;
+        }
+
+        & input {
+            display: none;
+
+            &:checked + label {
+                font-weight: bold;
+                color: #724935;
+            }
+        }
+
+        & label {
+            cursor: pointer;
+        }
+        
+    }
+
+   
+}
+
+.addTransferModal-container div {
+    margin-bottom: 10px;
+}
+
+.addTransferModal-container label {
+    width: 30%;
+    display: inline-block;
+}
+
+.addTransferModal-container input,
+.addTransferModal-container select {
+    width: 70%;
+    padding: 5px 5px;
+    font-size: 19px;
+    border-radius: 12px;
+    border: thin solid #ccc;
+}
+
+.addTransferModal-container input {
+    padding-left: 10px;
+}
+
+.addTransferModal-container input:focus,
+.addTransferModal-container select:focus {
+    outline: none;
+} 
+
+.addTransferModal-container button {
+    margin-top: 20px;
+    padding: 0.3em;
+}
+
+

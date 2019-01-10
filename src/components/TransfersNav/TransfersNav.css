@@ -1,8 +1,8 @@
 .transfersNav-container {
     height: 60px;
     line-height: 60px;
-    width: 70%;
-    margin: 0 auto;
+    width: 25%;
+    margin: 40px auto 0;
 }
 
 .transfersNav-container ul {
@@ -18,7 +18,7 @@
 }
 
 .transfersNav-container input {
-    visibility: hidden;
+    display: none;
 }
 
 .transfersNav-container label {

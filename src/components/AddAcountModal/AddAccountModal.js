@@ -11,8 +11,9 @@ const addAccountModal = ( props ) => {
                 <div >
                     <label>Group</label>
                     <select>
-                        <option> Cash </option>
-                        <option> Credit Card </option>
+                        {props.groups.map(group => (
+                            <option> {group.groupName} </option>
+                        ))}
                     </select>
                 </div>
                 <div >

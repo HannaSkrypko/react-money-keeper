@@ -14,6 +14,11 @@ class AccountsGroupList extends Component {
         let accountsInGroup = accounts.map(acc => { return (acc.group == groupName) ? acc : null} );
         return accountsInGroup
     }
+
+    // deleteAccountHandler = (id) => {             //DON'T WORK
+    //     axios.delete('./accout/' + id)
+    //         .then(response => {console.log(response)});
+    // }
     
 
     render() {
@@ -25,6 +30,7 @@ class AccountsGroupList extends Component {
                      let accounts = this.sortByGroupName(group.groupName);
                      return(
                         <AccountsGroup 
+                           // clicked={this.deleteAccountHandler}       //DON'T WORK
                             key={group.id}
                             editMode={this.props.editMode}
                             groupName={group.groupName} 

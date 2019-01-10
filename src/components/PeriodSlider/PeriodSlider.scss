@@ -24,13 +24,8 @@
     border-color: transparent;
     width: 15px;
     height: 100%;
-    cursor: pointer;
     position: relative;
     
-    &:focus {
-        outline: none;
-    }
-
     &:before {
         @extend %arrows;
     }

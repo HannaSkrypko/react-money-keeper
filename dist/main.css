@@ -13,6 +13,8 @@ body {
     margin: 0 auto;
     min-width: 320px;
     font-family: "Raleway", sans-serif;
+    min-height: 100vh;
+    position: relative;
 }
 .layout-container header {
   width: 100%;
@@ -53,35 +55,38 @@ body {
 }
 */
 
-.periodSlider-container {
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.2em;
-}
+.periodSlider-container button:before {
+  content: "";
+  position: absolute;
+  border: thin solid black;
+  border-right: none;
+  border-bottom: none;
+  width: 15px;
+  height: 15px; }
 
-.periodSlider-container div {
+.periodSlider-container {
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.2em; }
+  .periodSlider-container div {
     display: inline-block;
     text-align: center;
-    width: 90%;
-}
-
-.periodSlider-container button {
+    width: calc(100% - 50px); }
+  .periodSlider-container button {
     background-color: transparent;
     border-color: transparent;
-    width: 5%;
+    width: 15px;
     height: 100%;
     cursor: pointer;
-    position: relative;
-}
-
-.periodSlider-container button:before {
-    content: "";
-    position: absolute;
-    
-}
-
-
-
+    position: relative; }
+    .periodSlider-container button:focus {
+      outline: none; }
+    .periodSlider-container button:hover::before {
+      border-width: 2px; }
+    .periodSlider-container button.left-arrow:before {
+      transform: rotate(-45deg); }
+    .periodSlider-container button.right-arrow:before {
+      transform: rotate(138deg); }
 
 .transfersNav-container {
     height: 60px;
@@ -98,7 +103,7 @@ body {
 
 .transfersNav-container li {
     display: inline-block;
-    width: 33.3%;
+    width: 50%;
     text-align: center;
 }
 
@@ -173,70 +178,22 @@ body {
     width: 100px;
     text-align: center;
 }
-.accounts-container {
-    margin-top: 40px;
-}
-
-.accounts-container .crud-buttons{
-    width: 310px;
-    margin: 0 auto;
-}
-
-.accounts-container .crud-button{
-    background-color: transparent;
-    border: none;
-    font-size: 17px;
-    width: 60%;
-    cursor: pointer;
-}
-
-.accounts-container .crud-button:first-child{
-    width: 40%;
-}
-.accounts-container .crud-button:hover {
-    font-weight: bold;
-}
-
-.accounts-container button:focus {
-    outline: none;
-}
-.addModal-container {
-    width: 70%;
-    margin: 20px auto 0;
-}
-
-.addModal-container div {
-    margin-bottom: 10px;
-}
-
-.addModal-container label {
-    width: 30%;
-    display: inline-block;
-}
-
-.addModal-container input,
-.addModal-container select {
-    width: 70%;
-    padding: 5px 5px;
-    font-size: 19px;
-    border-radius: 12px;
-    border: thin solid #ccc;
-}
-
-.addModal-container input {
-    padding-left: 10px;
-}
-
-.addModal-container input:focus,
-.addModal-container select:focus {
-    outline: none;
-} 
-
-.addModal-container button {
-    margin-top: 20px;
-    padding: 0.3em;
-}
-
+.AddTransferButton {
+  background-color: #39a51c;
+  width: 70px;
+  height: 70px;
+  color: white;
+  font-size: 3em;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  right: 0; }
+  .AddTransferButton:hover {
+    font-weight: bold; }
+  .AddTransferButton:focus {
+    outline: none; }
 
 
 .modal-overlay {
@@ -315,6 +272,72 @@ body {
     background-color: #39a51c;
     font-weight: bold;
 }
+
+.accounts-container {
+    margin-top: 40px;
+}
+
+.accounts-container .crud-buttons{
+    width: 310px;
+    margin: 0 auto;
+}
+
+.accounts-container .crud-button{
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    width: 60%;
+    cursor: pointer;
+}
+
+.accounts-container .crud-button:first-child{
+    width: 40%;
+}
+.accounts-container .crud-button:hover {
+    font-weight: bold;
+}
+
+.accounts-container button:focus {
+    outline: none;
+}
+.addModal-container {
+    width: 70%;
+    margin: 20px auto 0;
+}
+
+.addModal-container div {
+    margin-bottom: 10px;
+}
+
+.addModal-container label {
+    width: 30%;
+    display: inline-block;
+}
+
+.addModal-container input,
+.addModal-container select {
+    width: 70%;
+    padding: 5px 5px;
+    font-size: 19px;
+    border-radius: 12px;
+    border: thin solid #ccc;
+}
+
+.addModal-container input {
+    padding-left: 10px;
+}
+
+.addModal-container input:focus,
+.addModal-container select:focus {
+    outline: none;
+} 
+
+.addModal-container button {
+    margin-top: 20px;
+    padding: 0.3em;
+}
+
+
 
 .accountsHeader-container {
     margin-top: 20px;
