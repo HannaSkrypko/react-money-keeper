@@ -12,7 +12,7 @@ let conf = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: [/node_modules/, /\.ejs$/],
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
                 }
@@ -54,7 +54,10 @@ let conf = {
         new MiniCssExtractPlugin ( {
             filename: '[name].css',
             chunkFilename: '[id].css'
-        })
+        }),
+        // new webpack.DefinePlugin({
+        //     'process.env.NODE_ENV': JSON.stringify('production')
+        // })
     ],
 
     

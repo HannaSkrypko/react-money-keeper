@@ -12,7 +12,7 @@ const addAccountModal = ( props ) => {
                     <label>Group</label>
                     <select>
                         {props.groups.map(group => (
-                            <option> {group.groupName} </option>
+                            <option key={group.id}> {group.groupName} </option>
                         ))}
                     </select>
                 </div>

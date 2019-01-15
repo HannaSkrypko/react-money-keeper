@@ -6,46 +6,18 @@ import AddAccountModal from "../../components/AddAcountModal/AddAccountModal";
 import AccountsHeader from "../../components/AccountsHeader/AccountsHeader";
 import AccountsGroupList from "../../components/AccountsGroupList/AccountsGroupList"
 import axios from '../../../axios-transfers';
+import { connect } from 'react-redux';
+import * as accountActions from '../../store/actions/account';
 
 class Accounts extends Component {
     state ={
         isShowed: false, //for add new account modal
-        isEditMode: false,
-        groups: [],
-        accounts: [],
+        //isEditMode: false,
     };
 
     componentDidMount() {
-        axios.get("/group.json")
-            .then(
-                response => {
-                    const fetchArray = [];
-                    for (let key in response.data) {
-                        fetchArray.push({
-                            ...response.data[key],
-                            id: key
-                        });
-                    }
-                    this.setState({
-                        groups: fetchArray,
-                    })
-                }
-            );
-        axios.get("/account.json")
-            .then(
-                response => {
-                    const fetchArray = [];
-                    for (let key in response.data) {
-                        fetchArray.push({
-                            ...response.data[key],
-                            id: key
-                        });
-                    }
-                    this.setState({
-                        accounts: fetchArray,
-                    })
-                }
-            );
+        this.props.onInitAccounts();
+        this.props.onInitGroups();
     }
 
 
@@ -62,23 +34,24 @@ class Accounts extends Component {
         } )
     };
 
-    toggleEditModeHandler = () => {
-        this.setState( state => ({
-            isEditMode: !state.isEditMode,
-        }) );
-    };
+    // toggleEditModeHandler = () => {
+    //     this.setState( state => ({
+    //         isEditMode: !state.isEditMode,
+    //     }) );
+    // };
 
     render () {
+        console.log(this.props.isEditMode);
         let addAccountModal = null;
         
         if (this.state.isShowed) {
-            addAccountModal = <AddAccountModal groups={this.state.groups} closed={this.closeAddAccountModalHandler}/>
+            addAccountModal = <AddAccountModal groups={this.props.groups} closed={this.closeAddAccountModalHandler}/>
         }        
 
         return (
             <div className="accounts-container">
                 <div className="crud-buttons">
-                    <button className="crud-button" onClick={this.toggleEditModeHandler}> Edit </button>
+                    <button className="crud-button" onClick={this.props.toggleEditMode}> Edit </button>
                     <button className="crud-button" onClick={this.showAddAccountModalHandler}> Add new account </button>
                 </div>
 
@@ -87,9 +60,9 @@ class Accounts extends Component {
                 <AccountsHeader />
 
                 <AccountsGroupList 
-                    groups={this.state.groups}
-                    accounts={this.state.accounts}
-                    editMode={this.state.isEditMode} />
+                    groups={this.props.groups}
+                    accounts={this.props.accounts}
+                    editMode={this.props.isEditMode} />
 
                 {/*<Modal />*/}
             </div>
@@ -97,4 +70,20 @@ class Accounts extends Component {
     }
 }
 
-export default Accounts;
+const mapStateToProps = state => {
+    return {
+        accounts: state.accounts,
+        groups: state.groups,
+        isEditMode: state.isEditMode,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onInitAccounts: () => dispatch(accountActions.initAccounts()),
+        onInitGroups: () => dispatch(accountActions.initGroups()),
+        toggleEditMode: () => dispatch(accountActions.toggleAccountsEditMode()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Accounts);

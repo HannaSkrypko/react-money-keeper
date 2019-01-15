@@ -93,7 +93,7 @@ class TransfersList extends Component {
         }
 
         let day = this.getNameOfTheDay(this.state.day)
-                
+ 
 
         return (
             <div className="transfersList-container">
