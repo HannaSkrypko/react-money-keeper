@@ -12,7 +12,6 @@ import * as accountActions from '../../store/actions/account';
 class Accounts extends Component {
     state ={
         isShowed: false, //for add new account modal
-        //isEditMode: false,
     };
 
     componentDidMount() {
@@ -33,12 +32,6 @@ class Accounts extends Component {
             isShowed: false,
         } )
     };
-
-    // toggleEditModeHandler = () => {
-    //     this.setState( state => ({
-    //         isEditMode: !state.isEditMode,
-    //     }) );
-    // };
 
     render () {
         console.log(this.props.isEditMode);
@@ -64,7 +57,6 @@ class Accounts extends Component {
                     accounts={this.props.accounts}
                     editMode={this.props.isEditMode} />
 
-                {/*<Modal />*/}
             </div>
         )
     }
