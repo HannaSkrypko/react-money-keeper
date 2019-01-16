@@ -23,12 +23,11 @@ const accountsGroup = ( props ) => {
                 if (account){
                     return(
                         <Account 
-                            //deleteClick={props.clicked} //DON'T WORK
+                            deleteClick={props.clicked} //DON'T WORK
                             key={account.id}
-                            //id={account.id} //DON'T WORK
+                            accountId={account.id} //DON'T WORK
                             name={account.name}
-                            balance={account.balance}
-                            editMode={props.editMode}/>
+                            balance={account.balance}/>
                     )
                 }
                 

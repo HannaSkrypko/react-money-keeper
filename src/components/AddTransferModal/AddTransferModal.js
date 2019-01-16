@@ -26,17 +26,19 @@ const addTransferModal = ( props ) => {
 
                 <div >
                     <label>Account</label>
-                    <select>
-                        <option> Cash </option>
-                        <option> Credit Card </option>
-                    </select>
+                    <select>            // TODO: CHANGE TO ACCOUNT
+                        {props.accounts.map(account => (
+                            <option key={account.id}> {account.name} </option>
+                        ))}
+                    </select> 
                 </div>
                 <div >
                     <label>Category</label>
-                        <select>
-                            <option> Cash </option>
-                            <option> Credit Card </option>
-                        </select>
+                    <select>
+                        {props.categories.map(category => (
+                            <option key={category.id}> {category.categoryName} </option>
+                        ))}
+                    </select>
                 </div>
                 <div >
                    {props.term == 2 ?  <label> Expense </label> :  <label> Income </label> }
@@ -51,5 +53,6 @@ const addTransferModal = ( props ) => {
         </Modal>
     )
 }
+
 
 export default addTransferModal;

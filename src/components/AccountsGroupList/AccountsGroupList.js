@@ -5,9 +5,6 @@ import AccountsGroup from "./AccountsGroup/AccountsGroup";
 import axios from '../../../axios-transfers';
 
 class AccountsGroupList extends Component {
-    // state = {
-    //     groups: this.props.groups,
-    // }
 
     sortByGroupName = (groupName) => {
         const accounts = this.props.accounts;
@@ -15,10 +12,10 @@ class AccountsGroupList extends Component {
         return accountsInGroup
     }
 
-    // deleteAccountHandler = (id) => {             //DON'T WORK
-    //     axios.delete('./accout/' + id)
-    //         .then(response => {console.log(response)});
-    // }
+    deleteAccountHandler = (id) => {             //DON'T WORK
+        axios.delete('./accout/' + id + '.json')
+             .then(response => {console.log(response)});
+    }
     
 
     render() {
@@ -30,11 +27,11 @@ class AccountsGroupList extends Component {
                      let accounts = this.sortByGroupName(group.groupName);
                      return(
                         <AccountsGroup 
-                           // clicked={this.deleteAccountHandler}       //DON'T WORK
+                            clicked={this.deleteAccountHandler}     
                             key={group.id}
-                            editMode={this.props.editMode}
                             groupName={group.groupName} 
                             accounts={accounts}/>
+                        
                      )
                  } )}
                 

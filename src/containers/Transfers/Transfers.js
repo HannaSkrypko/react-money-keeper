@@ -1,4 +1,5 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 import PeriodSlider from "../../components/PeriodSlider/PeriodSlider";
 import TransfersNav from "../../components/TransfersNav/TransfersNav";
@@ -50,7 +51,7 @@ class Transfers extends Component {
         let addTransferModal = null;
         
         if (this.state.isShowed) {
-            addTransferModal = <AddTransferModal closed={this.closeAddTransferModalHandler} setTerm={this.setTransferTerm} term={this.state.term}/>
+            addTransferModal = <AddTransferModal closed={this.closeAddTransferModalHandler} setTerm={this.setTransferTerm} term={this.state.term} categories={this.props.categories} accounts={this.props.accounts}/>
         } 
 
         return (
@@ -60,7 +61,7 @@ class Transfers extends Component {
     
                 <TransfersNav  setPeriod = {this.setPeriod} />
 
-                { this.state.period === 1 && <TransfersList />}
+                { this.state.period === 1 && <TransfersList transfers={this.props.transfers}/>}
                 { this.state.period === 2 && <TransfersSummaryList />} 
 
                 <AddTransferButton clicked={this.showAddTransferModalHandler}/> 
@@ -70,5 +71,13 @@ class Transfers extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        transfers: state.transfer.transfers,
+        categories: state.transfer.categories,
+        accounts: state.account.accounts,
+    }
+};
 
-export default Transfers;
+
+export default connect(mapStateToProps)(Transfers);

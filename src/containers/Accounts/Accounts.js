@@ -7,17 +7,17 @@ import AccountsHeader from "../../components/AccountsHeader/AccountsHeader";
 import AccountsGroupList from "../../components/AccountsGroupList/AccountsGroupList"
 import axios from '../../../axios-transfers';
 import { connect } from 'react-redux';
-import * as accountActions from '../../store/actions/account';
+import * as actions from '../../store/actions/allActions';
 
 class Accounts extends Component {
     state ={
         isShowed: false, //for add new account modal
     };
 
-    componentDidMount() {
-        this.props.onInitAccounts();
-        this.props.onInitGroups();
-    }
+    // componentDidMount() {
+    //     this.props.onInitAccounts();
+    //     this.props.onInitGroups();
+    // }
 
 
 
@@ -34,7 +34,6 @@ class Accounts extends Component {
     };
 
     render () {
-        console.log(this.props.isEditMode);
         let addAccountModal = null;
         
         if (this.state.isShowed) {
@@ -54,8 +53,7 @@ class Accounts extends Component {
 
                 <AccountsGroupList 
                     groups={this.props.groups}
-                    accounts={this.props.accounts}
-                    editMode={this.props.isEditMode} />
+                    accounts={this.props.accounts}/>
 
             </div>
         )
@@ -64,17 +62,17 @@ class Accounts extends Component {
 
 const mapStateToProps = state => {
     return {
-        accounts: state.accounts,
-        groups: state.groups,
-        isEditMode: state.isEditMode,
+        accounts: state.account.accounts,
+        groups: state.account.groups,
+        isEditMode: state.account.isEditMode,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onInitAccounts: () => dispatch(accountActions.initAccounts()),
-        onInitGroups: () => dispatch(accountActions.initGroups()),
-        toggleEditMode: () => dispatch(accountActions.toggleAccountsEditMode()),
+        // onInitAccounts: () => dispatch(actions.initAccounts()),
+        // onInitGroups: () => dispatch(actions.initGroups()),
+        toggleEditMode: () => dispatch(actions.toggleAccountsEditMode()),
     }
 }
 

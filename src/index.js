@@ -6,7 +6,10 @@ import thunk from 'redux-thunk';
 
 import './main.css';
 import App from './App';
-import reducer from './store/reducers/account';
+
+import accountReducer from './store/reducers/account';
+import transferReducer from './store/reducers/transfer';
+
 
 const logger = store => {
     return next => {
@@ -17,9 +20,14 @@ const logger = store => {
     }
 }
 
+const rootReducer = combineReducers({
+    account: accountReducer, 
+    transfer: transferReducer
+});
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(reducer, composeEnhancers(applyMiddleware(logger, thunk)));
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)));
 
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

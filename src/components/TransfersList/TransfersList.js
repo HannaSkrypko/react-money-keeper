@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Moment from "react-moment";
+import { connect } from 'react-redux';
 
 import "./TransfersList.css";
 
 import Transfer from "./Transfer/Transfer";
-import axios from "../../../axios-transfers";
+import * as actions from '../../store/actions/allActions';
 
 class TransfersList extends Component {
     state = {
-        trasfers: [],
         date: "",
         day: "",
         month: "",
@@ -64,29 +64,14 @@ class TransfersList extends Component {
 
     componentDidMount() {
         this.getFullDate();
-        
-        axios.get("/transfer.json")
-            .then(
-                response => {
-                    const fetchArray = [];
-                    for (let key in response.data) {
-                        fetchArray.push({
-                            ...response.data[key],
-                            id: key
-                        });
-                    }
-                    this.setState({
-                        trasfers: fetchArray,
-                    })
-                }
-            );
     }
 
     render() {
         let totalIncomes = 0;
         let totalExpenses = 0;
+        
 
-        {this.state.trasfers.map(transfer => {
+        {this.props.transfers.map(transfer => {
                                     totalIncomes+=transfer.income;
                                     totalExpenses+=transfer.expence;
                                 })
@@ -104,7 +89,7 @@ class TransfersList extends Component {
                     <div style={{color:"#008e97"}}> BR {totalIncomes} </div>
                     <div style={{color:"#dc143c"}}> BR {totalExpenses} </div>
                 </div>
-                {this.state.trasfers.map(transfer => (
+                {this.props.transfers.map(transfer => (
                     <Transfer 
                         key={transfer.id}
                         accountName={transfer.accountName}
@@ -118,6 +103,5 @@ class TransfersList extends Component {
         )
     }
 }
-
 
 export default TransfersList;

@@ -1,5 +1,5 @@
 import * as actionType from './actionTypes';
-import axios from '../../../axios-transfers'
+import axios from '../../../axios-transfers';
 
 export const setAccounts = (accounts) => {
     return {
